@@ -35,6 +35,6 @@ for num in range(1,len(profit)):
     max_profit_diff_date = str(date[change.index(max(change))])
     min_profit_diff_date = str(date[change.index(min(change))])
 
-print("Avereage Change: $", round(profit_change,2))
+print("Average Change: $", round(profit_change,2))
 print("Greatest Increase in Profit:", max_profit_diff_date,"($", round(max_profit_diff),")")
 print("Greatest Decrease in Profit:", min_profit_diff_date,"($", round(min_profit_diff),")")
