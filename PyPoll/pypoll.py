@@ -13,10 +13,11 @@ with open(pollCSV, 'r',) as csvfile:
     next(csvreader)
     for row in csvreader:
         votes.append(row[0])
-                
+        total_votes = len(votes)
+
 print('Election Results')
 print('--------------------')
-print('Total Votes:', len(votes))
+print('Total Votes:', total_votes)
 print( '-' * 20)
 
 #find Candidate's votes
@@ -25,9 +26,11 @@ with open(pollCSV, 'r',) as csvfile:
     next(csvreader)
     for row in csvreader:
         candidate.append(row[2])
-        vote_count = Counter(candidate)
-    for key,val in vote_count.items():
-        print(key, round(val / (len(votes)) * 100, 2),'%', '(',val,')')
+
+Counter(candidate)
+
+for key,val in Counter(candidate).items():
+    print(key, round(val / total_votes * 100, 2),'%', '(',val,')')
 
 print( '-' * 20)
 
